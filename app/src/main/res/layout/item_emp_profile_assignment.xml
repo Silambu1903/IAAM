@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/grid_item_border"
+        android:orientation="horizontal"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <TextView
+            android:id="@+id/txt_EP_assignment_date"
+            android:layout_width="85dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:text="Date"
+            android:tooltipText="Date"
+            android:singleLine="true"
+            android:textAlignment="center"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/txt_EP_assignment_status"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:text="Status"
+            android:tooltipText="Status"
+            android:textAlignment="center"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/txt_EP_assignment_site"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:tooltipText="Site"
+            android:singleLine="true"
+            android:text="Site"
+            android:textAlignment="center"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/txt_EP_assignment_line"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:text="Line"
+            android:singleLine="true"
+            android:tooltipText="Line"
+            android:textAlignment="center"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/txt_EP_assignment_machine"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:text="Machine"
+            android:singleLine="true"
+            android:tooltipText="Machine"
+            android:textAlignment="center"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/txt_EP_assignment_operation"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_weight="1"
+            android:text="Operation"
+            android:singleLine="true"
+            android:tooltipText="Operation"
+            android:textAlignment="center"
+            android:textSize="15sp" />
+    </LinearLayout>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/heatMapTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Availability"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp"
+            android:layout_marginLeft="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <HorizontalScrollView
+            android:id="@+id/horizontalScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/heatMapTitle"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:background="@color/color7"
+                        android:maxLines="1"
+                        android:text="Sites"
+                        android:id="@+id/location"
+                        android:textAlignment="center"
+                        android:tooltipText="Site" />
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:background="@color/color7"
+                        android:text="Jan"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:background="@color/color7"
+                        android:text="Feb"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:background="@color/color7"
+                        android:text="Mar"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:background="@color/color7"
+                        android:text="Apr"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:background="@color/color7"
+                        android:text="May"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:background="@color/color7"
+                        android:text="Jun"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:background="@color/color7"
+                        android:text="Jul"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:background="@color/color7"
+                        android:text="Aug"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:background="@color/color7"
+                        android:text="Sep"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:background="@color/color7"
+                        android:text="Oct"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:background="@color/color7"
+                        android:text="Nov"
+                        android:textAlignment="center" />
+
+                    <TextView
+                        android:layout_width="50dp"
+                        android:layout_height="wrap_content"
+                        android:background="@color/color7"
+                        android:text="Dec"
+                        android:textAlignment="center" />
+
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_AssetStatus_HeatMap"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="4.5dp"
+                    android:layout_marginRight="4.5dp"
+                    android:scrollbars="none"/>
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+        <TextView
+            android:id="@+id/heatMapDataEmpty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="@+id/horizontalScrollView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:gravity="center"
+            android:textSize="18dp"
+            android:visibility="visible"
+            android:text="No Data Available"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

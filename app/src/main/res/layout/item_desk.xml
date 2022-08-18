@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
+    app:cardBackgroundColor="@color/colorInvenItem">
+
+    <RelativeLayout
+        android:layout_gravity="center"
+        android:layout_width="100dp"
+        android:layout_height="100dp">
+
+        <TextView
+            android:id="@+id/txtTableNo"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="D.No"
+            android:textColor="@color/colorBlack"
+            android:textSize="30sp"
+            android:tooltipText="Desk number" />
+
+        <TextView
+            android:id="@+id/txtMacno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:text="SAP ID"
+            android:textSize="16sp"
+            android:tooltipText="Desk SAP ID" />
+
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>
+

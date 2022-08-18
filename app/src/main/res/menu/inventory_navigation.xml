@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_machine_spec"
+        android:icon="@drawable/ic_machine_spec"
+        android:title="Specifications" />
+
+    <item
+        android:id="@+id/nav_machine"
+        android:icon="@drawable/ic_sewing_machine"
+        android:title="Machines" />
+
+    <item
+        android:id="@+id/nav_desks"
+        android:icon="@drawable/ic_table_black"
+        android:title="Desks" />
+
+    <item
+        android:id="@+id/nav_device"
+        android:icon="@drawable/ic_socket_nav"
+        android:title="Smart devices" />
+
+</menu>

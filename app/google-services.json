@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "226022383989",
+    "firebase_url": "https://iaam-asset-tracking.firebaseio.com",
+    "project_id": "iaam-asset-tracking",
+    "storage_bucket": "iaam-asset-tracking.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:226022383989:android:4a59c44aed56d19bd3733c",
+        "android_client_info": {
+          "package_name": "com.rax.iaam"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "226022383989-4mraghbs8fppbrecla8ndp9ej32gavdo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rax.iaam",
+            "certificate_hash": "550287763271089d6c4117f896ef28b0aa3f9b3b"
+          }
+        },
+        {
+          "client_id": "226022383989-o8l5rjmaro8k5q29287t0qfc77iv5gdm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.rax.iaam",
+            "certificate_hash": "fcaed2da51185bd9983c3370c9b524144bc7151d"
+          }
+        },
+        {
+          "client_id": "226022383989-eto4ij0k23i47ifje9a5egpg9krhekt1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5VX7dN56r0HIA5Tt4neAIyMro0oFXcTQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "226022383989-eto4ij0k23i47ifje9a5egpg9krhekt1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

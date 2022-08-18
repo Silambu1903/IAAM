@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rootss">
+
+        <include
+            android:visibility="gone"
+            android:id="@+id/progress_circular"
+            layout="@layout/progress" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:nestedScrollingEnabled="true">
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_ssid"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="30dp"
+                    app:boxCornerRadiusBottomEnd="10dp"
+                    app:boxCornerRadiusBottomStart="10dp"
+                    app:boxCornerRadiusTopEnd="10dp"
+                    app:boxCornerRadiusTopStart="10dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtSSID"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="10dp"
+                        android:enabled="false"
+                        android:hint="@string/ssid"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLength="30"
+                        android:maxLines="1" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="30dp"
+                    app:boxCornerRadiusBottomEnd="10dp"
+                    app:boxCornerRadiusBottomStart="10dp"
+                    app:boxCornerRadiusTopEnd="10dp"
+                    app:boxCornerRadiusTopStart="10dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtBSSID"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="10dp"
+                        android:enabled="false"
+                        android:hint="@string/bssid"
+                        android:imeOptions="actionNext"
+                        android:inputType="text"
+                        android:maxLength="30"
+                        android:maxLines="1" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/til_old_password"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="30dp"
+                    app:boxCornerRadiusBottomEnd="10dp"
+                    app:boxCornerRadiusBottomStart="10dp"
+                    app:boxCornerRadiusTopEnd="10dp"
+                    app:boxCornerRadiusTopStart="10dp"
+                    app:passwordToggleEnabled="true"
+                    app:passwordToggleDrawable="@drawable/password_toggle">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edtPass"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawablePadding="10dp"
+                        android:hint="@string/password"
+                        android:imeOptions="actionNext"
+                        android:inputType="textPassword"
+
+                        android:maxLength="30"
+                        android:maxLines="1" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+                <!-- <com.google.android.material.textfield.TextInputLayout
+                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginStart="30dp"
+                     android:layout_marginTop="30dp"
+                     android:layout_marginEnd="30dp"
+                     android:visibility="visible"
+                     >
+                 <com.google.android.material.textfield.TextInputEditText
+                     android:id="@+id/edt_current"
+                     android:layout_width="match_parent"
+                     android:layout_height="match_parent"
+                     android:hint="Current"
+                     android:inputType="number"
+                     android:maxLength="4"
+
+                     android:textColor="@color/colorBlack" />
+                 </com.google.android.material.textfield.TextInputLayout>-->
+                <LinearLayout
+
+                    android:layout_width="fill_parent"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal"
+                    android:background="@drawable/border"
+                    android:layout_weight="1"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="30dp">
+                    <EditText
+                        android:layout_width="125dp"
+                        android:layout_height="match_parent"
+                        android:hint="current"
+                        android:layout_weight="1"
+                        android:layout_marginStart="10dp"
+                        android:textColor="@color/colorBlack"
+                        android:id="@+id/edt_Current"
+                        android:maxLength="4"
+                        android:background="@android:color/transparent"
+                        android:layout_gravity="center"
+                        tools:ignore="RtlCompat" />
+                    <TextView
+                        android:id="@+id/text_hint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:text="mA"
+
+                        android:textSize="18sp"
+                        android:layout_weight="1"
+                        android:textColor="@color/colorBlack"
+                        />
+                </LinearLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:visibility="visible"
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_heartBeat"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="Heartbeat"
+                        android:inputType="number"
+                        android:maxLength="2"
+                        android:text="40"
+                        android:textColor="@color/colorBlack" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="30dp"
+                    android:visibility="visible">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/edt_configUrl"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="Config Url"
+                        android:ellipsize="none"
+                        android:maxWidth="250dp"
+                        android:textColor="@color/colorBlack"
+                        android:imeOptions="actionDone"/>
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btn_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="30dp"
+                    android:padding="10dp"
+                    android:text="@string/search_device"
+                    app:cornerRadius="10dp" />
+
+            </LinearLayout>
+        </ScrollView>
+    </RelativeLayout>
+</layout>

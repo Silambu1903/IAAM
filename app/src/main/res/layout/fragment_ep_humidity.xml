@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/Ep_humSwipe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <include
+            android:id="@+id/progress_circular"
+            layout="@layout/progress"
+            android:visibility="gone" />
+        <TextView
+            android:id="@+id/txt_head_Env_humidity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:text="Humidity"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/Ep_HumidityValueTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0 RH"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+            app:layout_constraintEnd_toEndOf="@+id/imageView4"
+            app:layout_constraintStart_toStartOf="@+id/imageView4"
+            app:layout_constraintTop_toTopOf="@+id/imageView4"
+            android:textSize="20dp"
+            android:drawableStart="@drawable/ic_humidity"/>
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroup_EnvParam_humidity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_head_Env_humidity"
+            app:singleSelection="true"
+            app:checkedChip="@+id/chip_avg_humidity">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_min_humidity"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:checkable="true"
+                android:clickable="true"
+                android:text="Min"
+                android:textAlignment="center"
+                android:textColor="@color/GBlue"
+                app:chipBackgroundColor="@color/chip_selector_humidity"
+                app:layout_constraintEnd_toStartOf="@+id/chip5"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_avg_humidity"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:checkable="true"
+                android:clickable="true"
+                android:text="Avg"
+                android:textAlignment="center"
+                android:textColor="@color/GBlue"
+                app:chipBackgroundColor="@color/chip_selector_humidity"
+                app:layout_constraintEnd_toStartOf="@+id/chip6"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/chip4"/>
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_max_humidity"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:checkable="true"
+                android:clickable="true"
+                android:text="Max"
+                android:textAlignment="center"
+                android:textColor="@color/GBlue"
+                app:chipBackgroundColor="@color/chip_selector_humidity"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/chip5"
+                app:layout_constraintTop_toBottomOf="@+id/txt_head_Env_temp" />
+
+        </com.google.android.material.chip.ChipGroup>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.85" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/grid_item_border"
+            app:layout_constraintBottom_toTopOf="@+id/guideline14" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
+            android:src="@drawable/circle_humidity"
+            app:layout_constraintBottom_toTopOf="@+id/guideline15"
+            app:layout_constraintEnd_toStartOf="@+id/guideline17"
+            app:layout_constraintStart_toStartOf="@+id/guideline16"
+            app:layout_constraintTop_toBottomOf="@+id/chipGroup_EnvParam_humidity" />
+
+        <TextView
+            android:id="@+id/textView49"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="Boundary\nExcursion"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textView51"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Ep_HumidityBounaryCount" />
+
+        <TextView
+            android:id="@+id/textView51"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="Time outside\nboundaries"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/textView49"
+            app:layout_constraintTop_toBottomOf="@+id/Ep_HumidityBoundaryTime" />
+
+        <TextView
+            android:id="@+id/Ep_HumidityBounaryCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="0"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textView49"
+            app:layout_constraintEnd_toEndOf="@+id/textView49"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/textView49"
+            app:layout_constraintTop_toTopOf="@+id/guideline14"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/Ep_HumidityBoundaryTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="5dp"
+            android:text="0"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/textView51"
+            app:layout_constraintEnd_toEndOf="@+id/textView51"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@+id/textView51"
+            app:layout_constraintTop_toTopOf="@+id/guideline14"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/lineChart_EnvParam_humidity"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline14"
+            app:layout_constraintTop_toBottomOf="@+id/textView54" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.44" />
+
+        <TextView
+            android:id="@+id/textView54"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:text="Readings"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline15" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.9" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</layout>

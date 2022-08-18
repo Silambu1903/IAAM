@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp">
+
+        <include
+            android:id="@+id/progress_circular_device_assign"
+            layout="@layout/progress"
+            android:visibility="gone" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/spinnerLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <AutoCompleteTextView
+
+                android:id="@+id/filled_exposed_dropdown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:editable="false"
+                android:hint="@string/clients" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:layout_marginTop="10dp"
+            android:id="@+id/swipe_refresh_device_assign"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/btnAssignSockets"
+            android:layout_below="@+id/spinnerLayout">
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_device_assign"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/progress_circular_device_assign">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <Button
+            android:id="@+id/btnAssignSockets"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:text="Assign Smart device" />
+
+    </RelativeLayout>
+</layout>

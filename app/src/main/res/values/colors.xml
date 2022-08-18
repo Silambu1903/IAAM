@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#242424</color>
+    <color name="colorPrimaryDark">#242424</color>
+    <color name="colorAccent">#242424</color>
+    <color name="colorBlack">#000</color>
+    <color name="coloWhite">#FFF</color>
+    <color name="coloRed">#CC0000</color>
+    <color name="colorNavigation">#fff</color>
+    <color name="colorNavigationDivider">#E0E0E0</color>
+    <color name="colorDisabled">#808080</color>
+    <color name="colorDisabledLight">#DADCE0</color>
+    <color name="colorNavIcon">#5F6368</color>
+    <color name="colorTransparent">#00000000</color>
+    <color name="colorTransparentWhite">#B7FFFFFF</color>
+    <color name="colorSelectedItem">#9A2874F0</color>
+    <color name="colorInvenItem">#EBEBEB</color>
+    <color name="colorItemSelected">#E8F0FE</color>
+    <color name="colorDashItemBack">#FAFAFA</color>
+
+    <color name="color1">#64B5F6</color>
+    <color name="color2">#FDAE1F</color>
+    <color name="color3">#EC407A</color>
+    <color name="color4">#8D6E63</color>
+    <color name="color5">#7E57C2</color>
+    <color name="color6">#ef5350</color>
+    <color name="color7">#BDBDBD</color>
+    <color name="color8">#80F5FF</color>
+    <color name="color9">#FFC299</color>
+    <color name="color10">#99FFA5</color>
+    <color name="color11">#C6AC54</color>
+    <color name="color12">#F8C6FD</color>
+    <color name="color13">#0AE973</color>
+    <color name="color14">#D6C200</color>
+    <color name="color15">#F2EA30</color>
+    <color name="color16">#c7ff33 </color>
+    <color name="color17">#006400</color>//dark green
+
+//GColors
+    <color name="GRed">#DB4437</color>
+    <color name="GBlue">#4285F4</color>
+    <color name="GGreen">#0F9D58</color>
+    <color name="GOrange">#F34F1C</color>
+    <color name="GYellow">#F4B400</color>
+    <color name="GPurple">#5F68C3</color>
+    <color name="GPink">#aa10b5</color>
+
+    //GColors-opacity 50
+    <color name="GRed50">#66DB4437</color>
+    <color name="GBlue50">#664285F4</color>
+    <color name="GGreen50">#660F9D58</color>
+    <color name="GOrange50">#66F34F1C</color>
+    <color name="GYellow50">#66F4B400</color>
+    <color name="GPurple50">#665F68C3</color>
+    <color name="GPink50">#66aa10b5</color>
+    <color name="GBlack15">#1A000000</color>
+
+    <color name="colorAlert">#f5e6fe</color>
+    <color name="filterBackground">#f0f0f0</color>
+
+</resources>

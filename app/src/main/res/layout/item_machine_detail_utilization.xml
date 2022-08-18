@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:id="@+id/linearlay_MDs"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/grid_item_border"
+    android:orientation="horizontal"
+    android:padding="0dp"
+    android:layout_below="@+id/txt_md_head_utilization"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_marginTop="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/txt_md_utilization_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="1"
+        android:ellipsize="end"
+        android:maxWidth="20dp"
+        android:singleLine="true"
+        android:text="Date"
+        android:tooltipText="Date"
+        android:textAlignment="center"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/txt_md_utilization_uptime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="8dp"
+        android:layout_weight="1"
+        android:ellipsize="middle"
+        android:maxWidth="25dp"
+        android:singleLine="true"
+        android:text="Uptime %"
+        android:tooltipText="Uptime %"
+        android:textAlignment="center"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/txt_md_utilization_utilization"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="8dp"
+        android:layout_weight="1"
+        android:ellipsize="middle"
+        android:maxWidth="25dp"
+        android:singleLine="true"
+        android:text="Utilization %"
+        android:tooltipText="Utilization %"
+        android:textAlignment="center"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/txt_md_utilization_operator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="8dp"
+        android:layout_weight="1"
+        android:ellipsize="middle"
+        android:maxWidth="20dp"
+        android:singleLine="true"
+        android:text="Operator"
+        android:tooltipText="Operator"
+        android:textAlignment="center"
+        android:textSize="15sp" />
+
+    </LinearLayout>
+
+</LinearLayout>

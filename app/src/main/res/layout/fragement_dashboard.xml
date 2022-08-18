@@ -1,0 +1,789 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:nestedScrollingEnabled="true">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:isScrollContainer="true"
+            android:orientation="vertical">
+
+            <include
+                android:id="@+id/progress_circular"
+                layout="@layout/progress"
+                android:visibility="gone" />
+
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/srl_refreshCounts"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:isScrollContainer="true"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <RelativeLayout
+                        android:id="@+id/client"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/txtTotalClients"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/ic_c1"
+                            android:gravity="center"
+                            android:textColor="@color/coloWhite"
+                            android:textSize="30sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/txtTotalClients"
+                            android:layout_alignStart="@id/txtTotalClients"
+                            android:layout_alignEnd="@id/txtTotalClients"
+                            android:gravity="center"
+                            android:text="@string/total_clients"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="16sp" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/devices"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:layout_toEndOf="@id/client"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <TextView
+                            android:id="@+id/txtTotalDevices"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/ic_c2"
+                            android:gravity="center"
+                            android:textColor="@color/coloWhite"
+                            android:textSize="30sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/txtTotalDevices"
+                            android:layout_alignStart="@id/txtTotalDevices"
+                            android:layout_alignEnd="@id/txtTotalDevices"
+                            android:gravity="center"
+                            android:text="@string/total_devices"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="16sp" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/unassigned"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/client"
+                        android:layout_margin="10dp"
+                        android:layout_toEndOf="@id/client"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/txtUnassigned"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/ic_c3"
+                            android:gravity="center"
+                            android:textColor="@color/coloWhite"
+                            android:textSize="30sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/txtUnassigned"
+                            android:layout_alignStart="@id/txtUnassigned"
+                            android:layout_alignEnd="@id/txtUnassigned"
+                            android:gravity="center"
+                            android:text="@string/total_unassigned"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="16sp" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/assigned"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/client"
+                        android:layout_margin="10dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/txtAssigned"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/ic_c4"
+                            android:gravity="center"
+                            android:textColor="@color/coloWhite"
+                            android:textSize="30sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/txtAssigned"
+                            android:layout_alignStart="@id/txtAssigned"
+                            android:layout_alignEnd="@id/txtAssigned"
+                            android:gravity="center"
+                            android:text="@string/total_assigned"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="16sp" />
+
+                    </RelativeLayout>
+
+                    <!--     <RelativeLayout
+                             android:layout_width="wrap_content"
+                             android:layout_height="wrap_content"
+                             android:layout_below="@+id/assigned">
+
+                             <com.google.android.material.button.MaterialButton
+                                 android:id="@+id/btn_FWS"
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:text="FWS" />
+
+                             <com.google.android.material.button.MaterialButton
+                                 android:id="@+id/btn_minutes"
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:layout_toRightOf="@+id/btn_FWS"
+                                 android:text="minutes" />
+                             <com.google.android.material.button.MaterialButton
+                                 android:id="@+id/btn_spare_consumption"
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:layout_below="@+id/btn_minutes"
+                                 android:text="Spare Cons" />
+                             <com.google.android.material.button.MaterialButton
+                                 android:id="@+id/btn_maintenance"
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:layout_toRightOf="@+id/btn_minutes"
+                                 android:text="maintenance" />
+
+                             <com.google.android.material.button.MaterialButton
+                                 android:id="@+id/btn_emp_details"
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:layout_toRightOf="@+id/btn_spare_consumption"
+                                 android:layout_below="@+id/btn_minutes"
+                                 android:text="emp details" />
+                             <com.google.android.material.button.MaterialButton
+                                 android:id="@+id/btn_EnvironmentalParameter"
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:layout_toRightOf="@+id/btn_emp_details"
+                                 android:layout_below="@+id/btn_minutes"
+                                 android:text="Environmental" />
+
+                             <com.google.android.material.button.MaterialButton
+                                 android:id="@+id/btn_asset_status"
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:text="asset"
+                                 android:layout_below="@+id/btn_spare_consumption"/>
+                             <com.google.android.material.button.MaterialButton
+                                 android:id="@+id/btn_needle_time"
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:text="needle time"
+                                 android:layout_below="@+id/btn_spare_consumption"
+                                 android:layout_toRightOf="@+id/btn_asset_status"/>
+                             <com.google.android.material.button.MaterialButton
+                                 android:id="@+id/btn_session_punctuality"
+                                 android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:text="nsession punc"
+
+                                 android:layout_below="@+id/btn_spare_consumption"
+                                 android:layout_toRightOf="@+id/btn_needle_time"/>
+
+                         </RelativeLayout>-->
+
+
+                </RelativeLayout>
+
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:isScrollContainer="true"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_token"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:text="get Token" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_filter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/btn_token"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="10dp"
+                        android:text="filter" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/btn_FWS"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="3dp"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?attr/selectableItemBackground"
+                            android:tooltipText="FactoryWiseStatus"
+                            app:cardBackgroundColor="@color/color1"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="1dp"
+                            app:shapeAppearanceOverlay="@style/ShapeAppearance.MyApp.MediumComponent.Cut">
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+                                    <ImageView
+                                        android:layout_width="60dp"
+                                        android:layout_height="60dp"
+                                        android:layout_centerInParent="true"
+                                        android:layout_above="@id/factorywise_tv"
+                                        android:src="@drawable/ic_sewing_machine_dash" />
+
+                                <TextView
+                                    android:id="@+id/factorywise_tv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginBottom="10dp"
+                                    android:text="FactorywiseStatus"
+                                    android:textColor="@color/colorBlack"
+                                    android:textSize="16sp" />
+                            </RelativeLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/btn_minutes"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="3dp"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?attr/selectableItemBackground"
+                            android:tooltipText="Mintues"
+                            app:cardBackgroundColor="@color/color2"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="1dp"
+                            app:shapeAppearanceOverlay="@style/ShapeAppearance.MyApp.MediumComponent.Cut">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:layout_width="60dp"
+                                    android:layout_height="60dp"
+                                    android:layout_centerInParent="true"
+                                    android:layout_above="@+id/mintues_tv"
+                                    android:src="@drawable/ic_clock_mintues" />
+
+                                <TextView
+                                    android:id="@+id/mintues_tv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginBottom="10dp"
+                                    android:text="Mintues"
+                                    android:textColor="@color/colorBlack"
+                                    android:textSize="16sp" />
+                            </RelativeLayout>
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/btn_maintenance"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="3dp"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?attr/selectableItemBackground"
+                            android:tooltipText="Maintenance"
+                            app:cardBackgroundColor="@color/color3"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="0dp"
+                            app:shapeAppearanceOverlay="@style/ShapeAppearance.MyApp.MediumComponent.Cut">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                 <ImageView
+                                     android:layout_width="60dp"
+                                     android:layout_height="60dp"
+                                     android:layout_centerInParent="true"
+                                     android:layout_above="@id/Maintenance_tv"
+                                     android:src="@drawable/ic_maintenance" />
+
+                                <TextView
+                                    android:id="@+id/Maintenance_tv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_centerInParent="true"
+                                    android:textAlignment="center"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginBottom="10dp"
+                                    android:text="Maintenance"
+                                    android:textColor="@color/colorBlack"
+                                    android:textSize="16sp" />
+                            </RelativeLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/btn_spare_consumption"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="3dp"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?attr/selectableItemBackground"
+                            android:tooltipText="Spare Cons"
+                            app:cardBackgroundColor="@color/color4"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="0dp"
+                            app:shapeAppearanceOverlay="@style/ShapeAppearance.MyApp.MediumComponent.Cut">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                    <ImageView
+                                        android:layout_width="60dp"
+                                        android:layout_height="60dp"
+                                        android:layout_centerInParent="true"
+                                        android:layout_above="@id/spare_tv"
+                                        android:src="@drawable/ic_needlespare" />
+
+                                <TextView
+                                    android:id="@+id/spare_tv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginBottom="10dp"
+                                    android:text="SpareConsumption"
+                                    android:textColor="@color/colorBlack"
+                                    android:textSize="16sp" />
+                            </RelativeLayout>
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/btn_emp_details"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="3dp"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?attr/selectableItemBackground"
+                            android:tooltipText="Employee Details"
+                            app:cardBackgroundColor="@color/color5"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="0dp"
+                            app:shapeAppearanceOverlay="@style/ShapeAppearance.MyApp.MediumComponent.Cut">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                  <ImageView
+                                      android:layout_width="60dp"
+                                      android:layout_height="60dp"
+                                      android:layout_centerInParent="true"
+                                     android:layout_above="@id/empdetails_tv"
+                                      android:src="@drawable/ic_emplodash" />
+
+                                <TextView
+                                    android:id="@+id/empdetails_tv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginBottom="10dp"
+                                    android:text="Employee Details"
+                                    android:textColor="@color/colorBlack"
+                                    android:textSize="16sp" />
+                            </RelativeLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/btn_EnvironmentalParameter"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="3dp"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?attr/selectableItemBackground"
+                            android:tooltipText="Environmental"
+                            app:cardBackgroundColor="@color/color6"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="0dp"
+                            app:shapeAppearanceOverlay="@style/ShapeAppearance.MyApp.MediumComponent.Cut">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                    <ImageView
+                                        android:layout_width="60dp"
+                                        android:layout_height="60dp"
+                                        android:layout_above="@id/Environmental_tv"
+                                        android:layout_centerInParent="true"
+                                        android:src="@drawable/ic_ecosystem" />
+
+                                <TextView
+                                    android:id="@+id/Environmental_tv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginBottom="10dp"
+                                    android:text="Environmental"
+                                    android:textColor="@color/colorBlack"
+                                    android:textSize="18sp" />
+                            </RelativeLayout>
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/btn_asset_status"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="3dp"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?attr/selectableItemBackground"
+                            android:tooltipText="Asset"
+                            app:cardBackgroundColor="@color/color7"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="0dp"
+                            app:shapeAppearanceOverlay="@style/ShapeAppearance.MyApp.MediumComponent.Cut">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                  <ImageView
+                                      android:layout_width="60dp"
+                                      android:layout_height="60dp"
+                                      android:layout_centerInParent="true"
+                                      android:layout_above="@id/Asset_tv"
+                                      android:src="@drawable/ic_report" />
+
+                                <TextView
+                                    android:id="@+id/Asset_tv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginBottom="10dp"
+                                    android:text="Asset Status"
+                                    android:textColor="@color/colorBlack"
+                                    android:textSize="16sp" />
+                            </RelativeLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/btn_needle_time"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="3dp"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?attr/selectableItemBackground"
+                            android:tooltipText="Needle Status"
+                            app:cardBackgroundColor="@color/color9"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="0dp"
+                            app:shapeAppearanceOverlay="@style/ShapeAppearance.MyApp.MediumComponent.Cut">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                 <ImageView
+                                     android:layout_width="60dp"
+                                     android:layout_height="60dp"
+                                     android:layout_centerInParent="true"
+                                     android:layout_above="@+id/needle_tv"
+                                     android:src="@drawable/ic_thread" />
+
+                                <TextView
+                                    android:id="@+id/needle_tv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginBottom="10dp"
+                                    android:text="Needle Status"
+                                    android:textColor="@color/colorBlack"
+                                    android:textSize="16sp" />
+                            </RelativeLayout>
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/btn_session_punctuality"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="3dp"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?attr/selectableItemBackground"
+                            android:tooltipText="Asset"
+                            app:cardBackgroundColor="@color/color12"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="0dp"
+                            app:shapeAppearanceOverlay="@style/ShapeAppearance.MyApp.MediumComponent.Cut">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:layout_width="60dp"
+                                    android:layout_height="60dp"
+                                    android:layout_centerInParent="true"
+                                    android:layout_above="@id/btn_session_punctuality_tv"
+                                    android:src="@drawable/ic_punctual" />
+
+                                <TextView
+                                    android:id="@+id/btn_session_punctuality_tv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginBottom="10dp"
+                                    android:text="SessionPunctuality"
+                                    android:textColor="@color/colorBlack"
+                                    android:textSize="16sp" />
+                            </RelativeLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/Qr_Scaner_bn"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="3dp"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?attr/selectableItemBackground"
+                            android:tooltipText="Qr Scanner"
+                            app:cardBackgroundColor="@color/color11"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="0dp"
+                            app:shapeAppearanceOverlay="@style/ShapeAppearance.MyApp.MediumComponent.Cut">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:layout_width="60dp"
+                                    android:layout_height="60dp"
+                                    android:layout_centerInParent="true"
+                                    android:layout_above="@+id/QrScanner_tv"
+                                    android:src="@drawable/ic_qr_black" />
+
+                                <TextView
+                                    android:id="@+id/QrScanner_tv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginBottom="10dp"
+                                    android:text="Qr Scanner"
+                                    android:textColor="@color/colorBlack"
+                                    android:textSize="16sp" />
+                            </RelativeLayout>
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+                </LinearLayout>
+
+               <!-- <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.card.MaterialCardView
+
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="3dp"
+                            android:layout_weight="1"
+                            android:clickable="true"
+                            android:focusable="true"
+                            android:foreground="?attr/selectableItemBackground"
+                            android:tooltipText="Session Punctuality"
+                            app:cardBackgroundColor="@color/color1"
+                            app:cardCornerRadius="8dp"
+                            app:cardElevation="0dp"
+                            app:shapeAppearanceOverlay="@style/ShapeAppearance.MyApp.MediumComponent.Cut">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                   <ImageView
+                                       android:layout_width="60dp"
+                                       android:layout_height="60dp"
+                                       android:layout_centerInParent="true"
+                                       android:layout_above="@id/sesssion_tv"
+                                       android:src="@drawable/ic_punctual" />
+                                <TextView
+                                    android:id="@+id/sesssion_tv"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginBottom="10dp"
+                                    android:text="Session Punctuality"
+                                    android:textColor="@color/colorBlack"
+                                    android:textSize="18sp"
+                                    />
+                            </RelativeLayout>
+                        </com.google.android.material.card.MaterialCardView>
+                    </LinearLayout>
+
+                </LinearLayout>-->
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+    </ScrollView>
+</layout>

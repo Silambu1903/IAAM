@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/progress_circular_shiftAssign_update"
+            layout="@layout/progress"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/txt_LineName_shiftAssign"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="15dp"
+            android:textSize="20sp" />
+
+
+        <RelativeLayout
+            android:id="@+id/rl_shiftAssign_shift_head"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_LineName_shiftAssign">
+
+            <TextView
+                android:id="@+id/txt_shiftAssign_shift_head"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="Shifts"
+                android:textColor="@color/colorBlack"
+                android:textSize="20sp" />
+
+
+        </RelativeLayout>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/srl_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/buttons"
+            android:layout_below="@+id/rl_shiftAssign_shift_head">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RelativeLayout
+                    android:id="@+id/emptyState_shift"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/coloWhite"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:elevation="10dp"
+                    android:gravity="center"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_margin="20dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="No shifts added !" />
+
+                </RelativeLayout>
+
+                <ListView
+                    android:visibility="visible"
+                    android:id="@+id/lv_shiftAssign"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/coloWhite"
+                    android:divider="@null" />
+
+            </RelativeLayout>
+
+
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="right">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_shiftAssign_add"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="15dp"
+                android:text="Assign"
+                android:visibility="visible" />
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</layout>

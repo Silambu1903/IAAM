@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp">
+
+    <RelativeLayout
+
+        android:layout_width="100dp"
+        android:layout_height="100dp">
+
+        <TextView
+            android:id="@+id/txtTableNo"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:gravity="center"
+            android:layout_centerInParent="true"
+            android:text="Desk No."
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txtMacno"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:text="SAP ID"
+            android:layout_height="wrap_content"
+            android:textSize="16sp" />
+
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>
+

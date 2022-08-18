@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/grid_item_border"
+        android:orientation="horizontal"
+        android:padding="0dp"
+        android:layout_marginTop="10dp">
+        <TextView
+            android:id="@+id/txt_FWS_site"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:text="Site"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:id="@+id/txt_FWS_block"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"
+            android:text="Block"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:id="@+id/txt_FWS_machines"
+            android:layout_width="87dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"
+            android:text="# of Machines"
+            android:textAlignment="center"/>
+
+        <TextView
+            android:id="@+id/txt_FWS_mom"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:drawablePadding="0dp"
+            android:ellipsize="middle"
+            android:text="MOM"
+            android:textAlignment="center"/>
+
+    </LinearLayout>
+
+</layout>

@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/factoriWiseSwipe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <include
+            android:id="@+id/progress_circular"
+            layout="@layout/progress"
+            android:visibility="gone" />
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Site detail"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/imageView2"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:src="@drawable/ic_sewing_machine"
+            app:layout_constraintBottom_toTopOf="@+id/textView10"
+            app:layout_constraintEnd_toStartOf="@+id/guideline5"
+            app:layout_constraintHorizontal_bias="0.5"
+            android:scaleType="centerCrop"
+            app:shapeAppearanceOverlay="@style/circleImageView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView8"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="# of Machines"
+
+            app:layout_constraintBottom_toTopOf="@+id/textView12"
+            app:layout_constraintEnd_toStartOf="@+id/guideline5"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="00"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toTopOf="@+id/view4"
+            app:layout_constraintEnd_toStartOf="@+id/guideline5"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.30" />
+
+
+        <View
+            android:id="@+id/view4"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/grid_item_border"
+            app:layout_constraintTop_toTopOf="@+id/guideline3"
+            tools:ignore="MissingConstraints"
+            android:visibility="gone"/>
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/grid_item_border"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".33" />
+
+        <TextView
+            android:id="@+id/txt_Block"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="5dp"
+            android:text="Block"
+            android:visibility="gone"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline3"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/txt_floor_Block"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="Machine Count "
+            android:textSize="18sp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@+id/txt_block_machine_count"
+            app:layout_constraintTop_toTopOf="@+id/guideline3"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/txt_block_machine_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="00"
+            android:visibility="gone"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline3"
+            tools:ignore="MissingConstraints" />
+
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/chart_fws_block"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"
+            android:layout_marginBottom="5dp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline4"
+            app:layout_constraintTop_toBottomOf="@+id/txt_Block"
+            tools:layout_editor_absoluteX="20dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+
+            app:layout_constraintGuide_percent=".46" />
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/grid_item_border"
+            app:layout_constraintBottom_toTopOf="@+id/txt_floor"
+            app:layout_constraintTop_toTopOf="@+id/guideline3"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/txt_floor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="5dp"
+            android:text="Floor detail"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline3"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/txt_floor_machine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="Machine count "
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/txt_floor_machine_count"
+            app:layout_constraintTop_toTopOf="@+id/guideline3"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/txt_floor_machine_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="00"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline3"
+            tools:ignore="MissingConstraints" />
+
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/chart_fws_floor"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/guideline6"
+            app:layout_constraintTop_toBottomOf="@+id/txt_floor" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".65" />
+
+        <View
+            android:id="@+id/view6"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@drawable/grid_item_border"
+            app:layout_constraintBottom_toTopOf="@+id/txt_line"
+            app:layout_constraintTop_toTopOf="@+id/guideline6"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/txt_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="5dp"
+            android:text="Line detail"
+            android:textColor="@color/colorPrimary"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline6"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/txt__machine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="8dp"
+            android:text="Machine count"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/txt_line_machine_count"
+            app:layout_constraintTop_toTopOf="@+id/guideline6"
+            tools:ignore="MissingConstraints" />
+        <TextView
+            android:id="@+id/txt_line_machine_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="00"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/guideline6"
+            tools:ignore="MissingConstraints" />
+
+
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/chart_fws_line"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_line" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="15dp" />
+
+        <HorizontalScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginRight="3dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/ic_border"
+            android:scrollbars="none"
+            app:layout_constraintBottom_toTopOf="@+id/guideline3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guideline5"
+            app:layout_constraintTop_toTopOf="@+id/guideline2">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/linearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/grid_item_border"
+                    android:orientation="horizontal"
+                    android:padding="0dp">
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_weight="1"
+                        android:text="Site"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorPrimary" />
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="8dp"
+                        android:layout_weight="1"
+                        android:text="Block"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorPrimary" />
+
+                    <TextView
+                        android:layout_width="87dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="8dp"
+                        android:layout_weight="1"
+                        android:text="# of Machines"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorPrimary" />
+
+                    <TextView
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:drawableStart="@drawable/ic_baseline_arrow_drop_down_24"
+                        android:drawablePadding="0dp"
+                        android:ellipsize="middle"
+                        android:gravity="start|center_vertical"
+                        android:text="MOM"
+                        android:textColor="@color/colorPrimary" />
+
+                </LinearLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_FWS"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</layout>

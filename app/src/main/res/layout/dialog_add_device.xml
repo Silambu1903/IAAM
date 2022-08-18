@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/progress_circular_adddevice_dialog"
+            layout="@layout/progress"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignBottom="@id/lay_parent"
+            android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/lay_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="@string/add_socket"
+            android:textColor="@color/colorBlack"
+            android:textSize="20sp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:visibility="visible">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_serial_no"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:enabled="true"
+                android:hint="@string/serial_no"
+                android:inputType="text"
+                android:maxLength="22"
+                android:maxLines="1"
+                android:textColor="@color/colorBlack" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:visibility="visible">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edt_mac_id"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:enabled="true"
+                android:hint="@string/mac_id"
+                android:inputType="text"
+                android:maxLength="22"
+                android:maxLines="1"
+                android:textColor="@color/colorBlack" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btnAddSockets"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="10dp"
+            android:text="@string/add" />
+
+    </LinearLayout>
+
+    </RelativeLayout>
+</layout>

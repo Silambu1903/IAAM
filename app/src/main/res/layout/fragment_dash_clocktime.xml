@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="Counts"
+            type="com.rax.iaam.ClockTimeModel" />
+    </data>
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/progress_circular"
+            layout="@layout/progress"
+            android:visibility="gone" />
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/srl_refreshCounts"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <RelativeLayout
+                    android:id="@+id/client"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:gravity="center"
+                    android:layout_alignStart="@id/layBelow"
+                    android:layout_alignEnd="@id/layBelow"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:clickable="true"
+                    android:focusable="true">
+
+                    <TextView
+                        android:id="@+id/txtPoweredOn"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/ic_c1"
+                        android:gravity="center"
+                        android:text="@={Counts.poweredOnPercent}"
+                        android:textColor="@color/coloWhite"
+                        android:textSize="30sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/txtPoweredOn"
+                        android:layout_alignStart="@id/txtPoweredOn"
+                        android:layout_alignEnd="@id/txtPoweredOn"
+                        android:gravity="center"
+                        android:text="@string/powered_on"
+                        android:textColor="@color/colorBlack"
+                        android:textSize="16sp" />
+
+                </RelativeLayout>
+
+
+
+                <RelativeLayout
+                    android:id="@+id/layBelow"
+                    android:layout_below="@id/client"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <RelativeLayout
+                        android:id="@+id/devices"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:focusable="true">
+
+                        <TextView
+                            android:id="@+id/txtOperated"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/ic_c2"
+                            android:gravity="center"
+                            android:text="@={Counts.operatedPercent}"
+                            android:textColor="@color/coloWhite"
+                            android:textSize="30sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/txtOperated"
+                            android:layout_alignStart="@id/txtOperated"
+                            android:layout_alignEnd="@id/txtOperated"
+                            android:gravity="center"
+                            android:text="Operated"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="16sp" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/assigned"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toEndOf="@id/devices"
+                        android:layout_margin="10dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:clickable="true"
+                        android:focusable="true"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@+id/txtIdel"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/ic_c4"
+                            android:gravity="center"
+                            android:text="@={Counts.idlePercent}"
+                            android:textColor="@color/coloWhite"
+                            android:textSize="30sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/txtIdel"
+                            android:layout_alignStart="@id/txtIdel"
+                            android:layout_alignEnd="@id/txtIdel"
+                            android:gravity="center"
+                            android:text="Idle"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="16sp" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+
+
+            </RelativeLayout>
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    </RelativeLayout>
+</layout>

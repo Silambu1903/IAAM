@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <RelativeLayout
+        android:id="@+id/parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/grid_item_border">
+
+        <TextView
+            android:id="@+id/txt_client_name_CA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorBlack"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="5dp"
+            android:textSize="20sp"
+            android:text="gopi"
+            />
+
+        <TextView
+            android:id="@+id/txt_client_shortName_CA"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_below="@+id/txt_client_name_CA"
+            android:layout_marginStart="10dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_client_shortName_CA">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:textSize="18sp"
+                android:layout_marginStart="10dp"
+                android:gravity="center"
+                android:text="Assigned devices :"
+                />
+            <TextView
+                android:id="@+id/txt_assn_all_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:layout_margin="5dp"
+                android:gravity="center"
+                android:text="0"
+                />
+
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</layout>
